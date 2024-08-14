@@ -1,0 +1,1 @@
+The batch file will search through files on the client side of the thick client application for sensitive information by looking for keywords like password= and pass=. This helps to find any hard-coded passwords or other sensitive data stored in the application
