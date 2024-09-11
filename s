@@ -13,7 +13,7 @@ for %%f in (*.txt) do (
     set "matched="
     :: Loop through each keyword
     for %%k in (%KEYWORDS%) do (
-        for /f "tokens=*" %%a in ('findstr /i /c:"%%k" "%%f"') do (
+        for /f "tokens=*" %%a in ('findstr /i /r "\b%%k\b" "%%f"') do (
             set "matched=1"
             echo "%%f": %%a
         )
