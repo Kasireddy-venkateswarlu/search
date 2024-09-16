@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ActiveX Example: Browser Tabs</title>
+    <title>Enumerate Browser Tabs via ActiveX</title>
     <script type="text/javascript">
-        function enumerateWindows() {
+        function enumerateTabs() {
             try {
-                var shellApp = new ActiveXObject("Shell.Application");
-                var windows = shellApp.Windows();
+                // Create ActiveXObject for Shell.Application
+                var shell = new ActiveXObject("Shell.Application");
+                
+                // Get all open windows
+                var windows = shell.Windows();
                 var output = "";
 
+                // Loop through open windows to find Internet Explorer instances
                 for (var i = 0; i < windows.Count; i++) {
-                    var win = windows.Item(i);
-                    if (win && win.LocationURL) {
-                        output += "Title: " + win.LocationName + ", URL: " + win.LocationURL + "\n";
+                    var window = windows.Item(i);
+                    // Check if window is Internet Explorer by looking for the LocationURL property
+                    if (window && window.LocationURL) {
+                        output += "Title: " + window.LocationName + "\n";
+                        output += "URL: " + window.LocationURL + "\n\n";
                     }
                 }
 
-                document.getElementById("output").innerText = output || "No tabs detected.";
+                // Display the result
+                document.getElementById("output").innerText = output || "No active Internet Explorer tabs found.";
             } catch (e) {
-                alert("ActiveX control failed or is disabled: " + e.message);
+                alert("Failed to enumerate tabs or ActiveX is disabled: " + e.message);
             }
         }
     </script>
 </head>
 <body>
-    <h1>List Open Internet Explorer Tabs</h1>
-    <button onclick="enumerateWindows()">Get Open Tabs</button>
+    <h1>Enumerate Open Internet Explorer Tabs</h1>
+    <button onclick="enumerateTabs()">Get Open Tabs</button>
     <pre id="output"></pre>
 </body>
 </html>
