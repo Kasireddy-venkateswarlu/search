@@ -1,1 +1,1 @@
-The "AppArmor is not installed" vulnerability refers to a situation where a Linux system lacks the AppArmor security module, which is used to enforce mandatory access control (MAC) policies. AppArmor is a Linux security framework that allows administrators to restrict programs' capabilities, limiting their access to files, resources, and privileges. When AppArmor is not installed or enabled, the system becomes more vulnerable to exploitation, as there is no additional layer of defense to prevent unauthorized applications or processes from accessing sensitive areas
+
