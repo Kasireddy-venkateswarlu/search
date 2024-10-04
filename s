@@ -1,3 +1,6 @@
+
+Insecure Data Storage occurs when an application improperly stores sensitive data, such as user credentials, personal information, session tokens, or other critical data, in an insecure location on the device or server. This data is often left unprotected, either unencrypted or without appropriate access controls, making it vulnerable to unauthorized access, theft, or modification by attackers
+
 ### Vulnerability Observation:
 The thick client application stores its data on the local file system even after the user logs out. This means anyone with access to the local file system can view or retrieve the application’s data, even without logging into the application.
 
