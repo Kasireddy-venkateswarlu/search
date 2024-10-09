@@ -1,1 +1,1 @@
-Improper permissions occur when access controls for files, directories, or system resources are configured incorrectly, allowing users or groups to have more access rights than necessary. This misconfiguration can lead to various security vulnerabilities, enabling unauthorized users to view, modify, or delete sensitive data or execute restricted actions within a system.
+
